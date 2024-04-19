@@ -12,7 +12,7 @@ function App() {
   console.log(data[0].firstName);
   return (
   <Container fixed>
-    <MediaCard />
+    <MediaCard employee={data} />
   </Container>
   )
 }

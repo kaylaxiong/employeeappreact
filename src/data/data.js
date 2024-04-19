@@ -1,5 +1,10 @@
 const data = [{
     "id": "E1002",
+    "image":"profile1.png",
+    "image":"profile2.png",
+    "image":"profile3.png",
+    "image":"profile4.png",
+    "image":"profile5.png",
     "firstName": "John",
     "lastName": "Smith",
     "email": "john.smith@example.com",
