@@ -9,37 +9,41 @@ import AppleIcon from '@mui/icons-material/Apple';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 
-export default function MediaCard({employee}) {
+
+export default function MediaCard({ employee }) {
   console.log(employee);
   return (
-    <Card sx={{ maxWidth: 345, margin:10, padding:2}}>
-      <CardMedia
-        sx={{ height: 280, backgroundSize: 'contain', margin:1} }
-        image="/profile1.png"
-        title="green iguana"
-      />
-      <CardContent>
-      <AppleIcon />
-        <Typography gutterBottom variant="h5" component="div">
-      {employee[0].firstname}{employee[0].lastname}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {employee[0].department}
-        </Typography>
-        <Typography>
-          {employee[0].position}
-        </Typography>
-      </CardContent>
+    <>
+      {employee.map((item, index) => (
+        <Card sx={{ maxWidth: 345, margin: 10, padding: 1 }}>
+          <CardMedia
+            sx={{ height: 200, backgroundSize: "contain", margin: 1 }}
+            image={`/employeeappreact/${item.image}`}
+            title="profile"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {item.firstName} {item.lastName}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {item.department}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {item.position}
+            </Typography>
+          </CardContent>
 
-      <Stack direction="row" spacing={1}>
-      <Chip label="Chip Filled" />
-      <Chip label="Chip Outlined" variant="outlined" />
-    </Stack>
+          <Stack direction="row" spacing={1}>
+            <Chip label="Chip Filled" />
+            <Chip label="Chip Outlined" variant="outlined" />
+          </Stack>
 
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+          <CardActions>
+            <Button size="small">Share</Button>
+            <Button size="small">Learn More</Button>
+          </CardActions>
+        </Card>
+      ))}
+    </>
   );
 }
