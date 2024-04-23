@@ -15,7 +15,7 @@ export default function MediaCard({employee}) {
     <Card sx={{ maxWidth: 345, margin:10, padding:2}}>
       <CardMedia
         sx={{ height: 280, backgroundSize: 'contain', margin:1} }
-        image="/public/profile1.png"
+        image="/profile1.png"
         title="green iguana"
       />
       <CardContent>
